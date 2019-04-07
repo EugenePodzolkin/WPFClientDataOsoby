@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WPFDataOsoby.OperationsService;
+using System.ServiceModel;
 
 namespace WPFDataOsoby
 {
@@ -29,8 +30,8 @@ namespace WPFDataOsoby
             InitializeComponent();
             try
             {
-                _dataClient = new DataOperationClient("BasicHttpBinding_IDataOperation");
-                _fileClient = new FileOperationClient("BasicHttpBinding_IFileOperation");
+                _dataClient = new DataOperationClient("NetTcpBinding_IDataOperation");
+                _fileClient = new FileOperationClient("NetTcpBinding_IFileOperation");
 
                 FullArrayOfOsoba = _fileClient.GetDataFromXML().ToList();
                 list_osoba.ItemsSource = FullArrayOfOsoba;
@@ -132,18 +133,34 @@ namespace WPFDataOsoby
 
         private void Close_app(object sender, EventArgs e)
         {
-            if(_fileClient != null) _fileClient.Close();
-            if(_dataClient != null) _dataClient.Close();
+            if (_fileClient.State == CommunicationState.Opened ||
+                    _fileClient.State == CommunicationState.Created)
+            {
+                _fileClient.Close();
+            }
+            if (_dataClient.State == CommunicationState.Opened ||
+                _dataClient.State == CommunicationState.Created)
+            {
+                _dataClient.Close();
+            }
         }
 
         private void Reconnect_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                if (_fileClient != null) _fileClient.Close();
-                if (_dataClient != null) _dataClient.Close();
-                _dataClient = new DataOperationClient("BasicHttpBinding_IDataOperation");
-                _fileClient = new FileOperationClient("BasicHttpBinding_IFileOperation");
+                if (_fileClient.State == CommunicationState.Opened ||
+                    _fileClient.State == CommunicationState.Created)
+                {
+                    _fileClient.Close();
+                }
+                if (_dataClient.State == CommunicationState.Opened || 
+                    _dataClient.State == CommunicationState.Created)
+                {
+                    _dataClient.Close();
+                }
+                _dataClient = new DataOperationClient("NetTcpBinding_IDataOperation");
+                _fileClient = new FileOperationClient("NetTcpBinding_IFileOperation");
 
                 FullArrayOfOsoba = _fileClient.GetDataFromXML().ToList();
                 list_osoba.ItemsSource = FullArrayOfOsoba;
