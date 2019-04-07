@@ -1,0 +1,15 @@
+C:\Users\yp670pa\source\repos\WPFDataOsoby\WPFDataOsoby\bin\Debug\WPFDataOsoby.exe.config
+C:\Users\yp670pa\source\repos\WPFDataOsoby\WPFDataOsoby\bin\Debug\WPFDataOsoby.exe
+C:\Users\yp670pa\source\repos\WPFDataOsoby\WPFDataOsoby\bin\Debug\WPFDataOsoby.pdb
+C:\Users\yp670pa\source\repos\WPFDataOsoby\WPFDataOsoby\obj\Debug\MainWindow.g.cs
+C:\Users\yp670pa\source\repos\WPFDataOsoby\WPFDataOsoby\obj\Debug\App.g.cs
+C:\Users\yp670pa\source\repos\WPFDataOsoby\WPFDataOsoby\obj\Debug\WPFDataOsoby_MarkupCompile.cache
+C:\Users\yp670pa\source\repos\WPFDataOsoby\WPFDataOsoby\obj\Debug\WPFDataOsoby_MarkupCompile.lref
+C:\Users\yp670pa\source\repos\WPFDataOsoby\WPFDataOsoby\obj\Debug\MainWindow.baml
+C:\Users\yp670pa\source\repos\WPFDataOsoby\WPFDataOsoby\obj\Debug\WPFDataOsoby.g.resources
+C:\Users\yp670pa\source\repos\WPFDataOsoby\WPFDataOsoby\obj\Debug\WPFDataOsoby.Properties.Resources.resources
+C:\Users\yp670pa\source\repos\WPFDataOsoby\WPFDataOsoby\obj\Debug\WPFDataOsoby.csproj.GenerateResource.cache
+C:\Users\yp670pa\source\repos\WPFDataOsoby\WPFDataOsoby\obj\Debug\WPFDataOsoby.csproj.CoreCompileInputs.cache
+C:\Users\yp670pa\source\repos\WPFDataOsoby\WPFDataOsoby\obj\Debug\WPFDataOsoby.exe
+C:\Users\yp670pa\source\repos\WPFDataOsoby\WPFDataOsoby\obj\Debug\WPFDataOsoby.pdb
+C:\Users\yp670pa\source\repos\WPFDataOsoby\WPFDataOsoby\obj\Debug\WPFDataOsoby.csprojAssemblyReference.cache

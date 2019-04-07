@@ -1,0 +1,54 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFDataOsoby"
+        xmlns:OperationsService="clr-namespace:WPFDataOsoby.OperationsService" xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="WPFDataOsoby.MainWindow"
+        mc:Ignorable="d"
+        Title="Person Data" Height="450" Width="800" Closed="Close_app"
+        ResizeMode="NoResize">
+    
+
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="21*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="AgeButton" Content="Enter" HorizontalAlignment="Left" Margin="77,247,0,0" VerticalAlignment="Top" Width="107" Click="AgeButton_Click" Height="52"/>
+        <TextBox x:Name="AgeText" HorizontalAlignment="Left" Height="36" Margin="77,195,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="107" RenderTransformOrigin="0.95,0.738" FontSize="24" TextAlignment="Center">
+            <TextBox.DataContext>
+                <System:Int32>0</System:Int32>
+            </TextBox.DataContext>
+        </TextBox>
+
+        <ListView x:Name="list_osoba" Margin="279,0,10,0" Grid.ColumnSpan="2" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ID" Width="20" DisplayMemberBinding="{Binding ID}"/>
+                    <GridViewColumn Header="Meno" Width="100" DisplayMemberBinding="{Binding Meno}"/>
+                    <GridViewColumn Header="Priezvisko" Width="100" DisplayMemberBinding="{Binding Priezvisko}"/>
+                    <GridViewColumn Header="DatumNarodenia" Width="100" DisplayMemberBinding="{Binding Path=DatumNarodenia, StringFormat='yyyy-MM-dd'}"/>
+                    <GridViewColumn Header="Ulica" Width="110" DisplayMemberBinding="{Binding Adresa.Ulica}"/>
+                    <GridViewColumn Header="Cislo" Width="30" DisplayMemberBinding="{Binding Adresa.Cislo}"/>
+                    <GridViewColumn Header="" Width="30">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <CheckBox  HorizontalAlignment="Center" IsChecked="{Binding IsSelected}"
+                                          Click="CheckBox_Click"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Label Content="Enter age:" HorizontalAlignment="Left" Margin="77,148,0,0" VerticalAlignment="Top" Height="42" Width="118" FontSize="24"/>
+        <Button Content="Write to .CSV" Click="WriteToCSV_Click"  HorizontalAlignment="Left" Margin="77,342,0,0" VerticalAlignment="Top" Width="107" Height="52" RenderTransformOrigin="0.692,-0.796"/>
+        <Button Content="Read all data" Click="ReadAllData_Click" HorizontalAlignment="Left" Height="52" Margin="77,81,0,0" VerticalAlignment="Top" Width="107"/>
+        <Button Content="Reconnect" HorizontalAlignment="Left" Height="52" Margin="77,10,0,0" VerticalAlignment="Top" Width="107" Click="Reconnect_Click"/>
+    </Grid>
+</Window>
+
+    
+    
